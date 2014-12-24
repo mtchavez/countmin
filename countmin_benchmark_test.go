@@ -14,9 +14,11 @@ func benchNew(b *testing.B, total int) {
 	}
 }
 
-func Benchmark_Add_1000(b *testing.B) { benchAdd(b, 1000) }
+func Benchmark_Add_1000(b *testing.B)   { benchAdd(b, 1000) }
+func Benchmark_Add_10000(b *testing.B)  { benchAdd(b, 10000) }
+func Benchmark_Add_100000(b *testing.B) { benchAdd(b, 1000000) }
 func benchAdd(b *testing.B, total int) {
-	cm := New(200, 200)
+	cm := New(40, 200)
 	b.ResetTimer()
 	var i int64
 	for i = 0; i < int64(b.N); i++ {
