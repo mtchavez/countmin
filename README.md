@@ -1,7 +1,9 @@
 # CountMin
 
+[![Latest Version](http://img.shields.io/github/release/mtchavez/countmin.svg?style=flat-square)](https://github.com/mtchavez/countmin/releases)
 [![Build Status](https://drone.io/github.com/mtchavez/countmin/status.png)](https://drone.io/github.com/mtchavez/countmin/latest)
 [![Coverage Status](https://coveralls.io/repos/mtchavez/countmin/badge.png?branch=master)](https://coveralls.io/r/mtchavez/countmin?branch=master)
+[![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](http://godoc.org/github.com/mtchavez/countmin)
 
 CountMin sketching algorithm.
 
@@ -19,7 +21,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/mtchavez/countmin/countmin"
+	"github.com/mtchavez/countmin"
 )
 
 func main() {
