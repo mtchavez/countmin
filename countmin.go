@@ -6,8 +6,11 @@ import (
 	"math/rand"
 )
 
+// Max int 64 size
 const MAXINT64 = 1<<63 - 1
 
+// CountMin holds count table and hashes for calculating
+// frequencies from a given input (usually a stream of data)
 type CountMin struct {
 	depth      int
 	width      int
@@ -18,6 +21,8 @@ type CountMin struct {
 	hashes     []int64
 }
 
+// New CountMin given a depth and width of the frequency
+// table to use. Returns the newly created CountMin
 func New(depth, width int) *CountMin {
 	cm := &CountMin{
 		depth:      depth,
@@ -29,6 +34,10 @@ func New(depth, width int) *CountMin {
 	return cm
 }
 
+// NewWithEpsCount initializes a CountMin given a confidence
+// to ensure between 0 < 1.0 and an epsilon between 0 and 1
+// with a smaller value for higher precision as it affects
+// the width of the table
 func NewWithEpsCount(confidence, eps float64) *CountMin {
 	if confidence >= 1.0 {
 		confidence = 0.99999
@@ -45,27 +54,32 @@ func NewWithEpsCount(confidence, eps float64) *CountMin {
 
 func (cm *CountMin) initTable() {
 	cm.table = make([][]int64, cm.depth)
-	for i, _ := range cm.table {
+	for i := range cm.table {
 		cm.table[i] = make([]int64, cm.width)
 	}
 	cm.hashes = make([]int64, cm.depth)
-	for i, _ := range cm.hashes {
+	for i := range cm.hashes {
 		cm.hashes[i] = rand.Int63()
 	}
 }
 
+// RelativeError returns epsilon of CountMin
 func (cm *CountMin) RelativeError() float64 {
 	return cm.eps
 }
 
+// Confidence returns confidence of CountMin
 func (cm *CountMin) Confidence() float64 {
 	return cm.confidence
 }
 
+// Size returns total size of CountMin
 func (cm *CountMin) Size() int64 {
 	return cm.size
 }
 
+// Add inserts an item in bytes and a count associated
+// which will also increment size of CountMin
 func (cm *CountMin) Add(item []byte, count int64) {
 	if count < 0 {
 		return
@@ -77,6 +91,8 @@ func (cm *CountMin) Add(item []byte, count int64) {
 	cm.size += count
 }
 
+// Count gets an associated total count for an item
+// in the CountMin
 func (cm *CountMin) Count(item []byte) int64 {
 	var answer int64 = MAXINT64
 	var val int64
