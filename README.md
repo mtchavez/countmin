@@ -44,15 +44,10 @@ Docs on [GoDoc](http://godoc.org/github.com/mtchavez/countmin/countmin)
 
 Run using `go test ./... --cover`
 
+Run benchmarks `go test --bench=.*`
+
 ## TODO
 
 * Merge functionality
 * Serialize/Deserialize
-* Benchmarks
 * TCP / HTTP server wrappers
-
-## License
-
-Written by Chavez
-
-Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
