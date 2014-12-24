@@ -21,11 +21,11 @@ func TestNew(t *testing.T) {
 	}
 	expectedEps := (2.0 / float64(width))
 	if cm.eps != expectedEps {
-		t.Errorf("Expected eps to be %d but got %d", expectedEps, cm.eps)
+		t.Errorf("Expected eps to be %f but got %f", expectedEps, cm.eps)
 	}
 	expectedConfidence := 1.0 - 1.0/math.Pow(2, float64(depth))
 	if cm.confidence != expectedConfidence {
-		t.Errorf("Expected eps to be %d but got %d", expectedConfidence, cm.confidence)
+		t.Errorf("Expected eps to be %f but got %f", expectedConfidence, cm.confidence)
 	}
 }
 
@@ -47,10 +47,10 @@ func TestNewWithEpsCount(t *testing.T) {
 	confidence := 0.9
 	cm := NewWithEpsCount(confidence, eps)
 	if cm.eps != eps {
-		t.Errorf("Expected eps to be %d but got %d", eps, cm.eps)
+		t.Errorf("Expected eps to be %f but got %f", eps, cm.eps)
 	}
 	if cm.confidence != confidence {
-		t.Errorf("Expected eps to be %d but got %d", confidence, cm.confidence)
+		t.Errorf("Expected eps to be %f but got %f", confidence, cm.confidence)
 	}
 	expectedWidth := int(math.Ceil(float64(2.0) / eps))
 	if cm.width != expectedWidth {
@@ -68,21 +68,21 @@ func TestNewWithEpsCountConfidenceGreaterThan1(t *testing.T) {
 	cm := NewWithEpsCount(confidence, eps)
 	expectedConfidence := 0.99999
 	if cm.confidence != expectedConfidence {
-		t.Errorf("Expected eps to be %d but got %d", expectedConfidence, cm.confidence)
+		t.Errorf("Expected eps to be %f but got %f", expectedConfidence, cm.confidence)
 	}
 }
 
 func TestRelativeError(t *testing.T) {
 	cm := testCM()
 	if cm.eps != cm.RelativeError() {
-		t.Errorf("Expected RelativeError to be %d but got %d", cm.eps, cm.RelativeError())
+		t.Errorf("Expected RelativeError to be %f but got %f", cm.eps, cm.RelativeError())
 	}
 }
 
 func TestConfidence(t *testing.T) {
 	cm := testCM()
 	if cm.confidence != cm.Confidence() {
-		t.Errorf("Expected Confidence to be %d but got %d", cm.confidence, cm.Confidence())
+		t.Errorf("Expected Confidence to be %f but got %f", cm.confidence, cm.Confidence())
 	}
 }
 
