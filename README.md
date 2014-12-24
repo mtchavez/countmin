@@ -11,7 +11,7 @@ CountMin sketching algorithm.
 
 Install package
 
-`go get -u github.com/mtchavez/countmin/countmin`
+`go get -u github.com/mtchavez/countmin`
 
 ## Usage
 
@@ -37,10 +37,6 @@ func main() {
 	fmt.Println("Confidence: ", cm.Confidence())
 }
 ```
-
-## Docs
-
-Docs on [GoDoc](http://godoc.org/github.com/mtchavez/countmin/countmin)
 
 ## Tests
 
