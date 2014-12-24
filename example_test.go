@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func ExampleAdd() {
+func ExampleCountMin_Add() {
 	cm := New(10, 100000000)
 	for _, i := range []int64{1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1} {
 		cm.Add([]byte(fmt.Sprintf("%d", i)), int64(i))
