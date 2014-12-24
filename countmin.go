@@ -35,9 +35,9 @@ func New(depth, width int) *CountMin {
 }
 
 // NewWithEpsCount initializes a CountMin given a confidence
-// to ensure between 0 < 1.0 and an epsilon between 0 and 1
-// with a smaller value for higher precision as it affects
-// the width of the table
+// to ensure between 0 < 1.0 which effects number of hashes used
+// and an epsilon between 0 and 1 with a smaller value for
+// higher precision as it affects the width of the table
 func NewWithEpsCount(confidence, eps float64) *CountMin {
 	if confidence >= 1.0 {
 		confidence = 0.99999
