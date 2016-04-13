@@ -4,13 +4,12 @@ import (
 	"errors"
 	"hash/fnv"
 	"math"
-	"math/rand"
 )
 
 // Max int 64 size
 const MAXINT64 = 1<<63 - 1
 
-// CountMin holds count table and hashes for calculating
+// CountMin holds count table for calculating
 // frequencies from a given input (usually a stream of data)
 type CountMin struct {
 	depth      int
@@ -19,7 +18,6 @@ type CountMin struct {
 	eps        float64
 	confidence float64
 	table      [][]int64
-	hashes     []int64
 }
 
 // New CountMin given a depth and width of the frequency
@@ -57,10 +55,6 @@ func (cm *CountMin) initTable() {
 	cm.table = make([][]int64, cm.depth)
 	for i := range cm.table {
 		cm.table[i] = make([]int64, cm.width)
-	}
-	cm.hashes = make([]int64, cm.depth)
-	for i := range cm.hashes {
-		cm.hashes[i] = rand.Int63()
 	}
 }
 

@@ -37,9 +37,6 @@ func TestNewInitTable(t *testing.T) {
 	if len(cm.table[0]) != cm.width {
 		t.Errorf("Expected table width of %d but got %d", cm.width, len(cm.table[0]))
 	}
-	if len(cm.hashes) != cm.depth {
-		t.Errorf("Expected hash length to equal depth %d but got %d", cm.depth, len(cm.hashes))
-	}
 }
 
 func TestNewWithEpsCount(t *testing.T) {
