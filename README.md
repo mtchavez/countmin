@@ -46,6 +46,5 @@ Run benchmarks `go test --bench=.*`
 
 ## TODO
 
-* Merge functionality
 * Serialize/Deserialize
 * TCP / HTTP server wrappers
