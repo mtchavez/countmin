@@ -158,3 +158,18 @@ func TestHasher(t *testing.T) {
 		t.Errorf("Expected %d hash functions but got %d", cm.depth, len(hashed))
 	}
 }
+
+func TestMergeMismatched(t *testing.T) {
+	cm1 := testCM()
+	cm2 := New(1, 1)
+	_, merge1Error := Merge(cm1, cm2)
+	if merge1Error == nil {
+		t.Errorf("Expected merge to fail with different depths but got nil")
+	}
+
+	cm3 := New(4, 1)
+	_, merge2Error := Merge(cm1, cm3)
+	if merge2Error == nil {
+		t.Errorf("Expected merge to fail with different widths but got nil")
+	}
+}
