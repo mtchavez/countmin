@@ -6,7 +6,7 @@ import (
 	"math"
 )
 
-// Max int 64 size
+// MAXINT64 is max 64 bit integer size
 const MAXINT64 = 1<<63 - 1
 
 // CountMin holds count table for calculating
