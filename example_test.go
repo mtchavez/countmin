@@ -24,7 +24,7 @@ func ExampleCountMin_Add() {
 	// Confidence:  0.9990234375
 }
 
-func ExampleCountMin_Merge() {
+func ExampleMerge() {
 	cm1 := New(10, 100000000)
 	for _, i := range []int64{1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1} {
 		cm1.Add([]byte(fmt.Sprintf("%d", i)), int64(i))
