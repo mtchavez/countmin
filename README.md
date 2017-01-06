@@ -1,7 +1,7 @@
 # CountMin
 
 [![Latest Version](http://img.shields.io/github/release/mtchavez/countmin.svg?style=flat-square)](https://github.com/mtchavez/countmin/releases)
-[![Build Status](https://drone.io/github.com/mtchavez/countmin/status.png)](https://drone.io/github.com/mtchavez/countmin/latest)
+[![Build Status](https://travis-ci.org/mtchavez/countmin.svg?branch=f-ci-updates)](https://travis-ci.org/mtchavez/countmin)
 [![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](http://godoc.org/github.com/mtchavez/countmin)
 [![Go Report Card](https://goreportcard.com/badge/github.com/mtchavez/countmin)](https://goreportcard.com/report/github.com/mtchavez/countmin)
 [![Go Cover](http://gocover.io/_badge/github.com/mtchavez/countmin)](http://gocover.io/github.com/mtchavez/countmin)
