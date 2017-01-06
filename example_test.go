@@ -5,7 +5,7 @@ import (
 )
 
 func ExampleCountMin_Add() {
-	cm := New(10, 100000000)
+	cm := New(10, 1000000)
 	for _, i := range []int64{1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1} {
 		cm.Add([]byte(fmt.Sprintf("%d", i)), int64(i))
 	}
@@ -20,17 +20,17 @@ func ExampleCountMin_Add() {
 	// Estimate of 3 is 6
 	// Estimate of 9 is 18
 	// Size:  91
-	// Err:  2e-08
+	// Err:  2e-06
 	// Confidence:  0.9990234375
 }
 
 func ExampleMerge() {
-	cm1 := New(10, 100000000)
+	cm1 := New(10, 1000000)
 	for _, i := range []int64{1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1} {
 		cm1.Add([]byte(fmt.Sprintf("%d", i)), int64(i))
 	}
 
-	cm2 := New(10, 100000000)
+	cm2 := New(10, 1000000)
 	for _, i := range []int64{1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1} {
 		cm2.Add([]byte(fmt.Sprintf("%d", i)), int64(i))
 	}
@@ -46,6 +46,6 @@ func ExampleMerge() {
 	// Estimate of 3 is 12
 	// Estimate of 9 is 36
 	// Size:  182
-	// Err:  2e-08
+	// Err:  2e-06
 	// Confidence:  0.9990234375
 }
