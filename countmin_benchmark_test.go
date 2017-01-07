@@ -25,3 +25,18 @@ func benchAdd(b *testing.B, total int) {
 		cm.Add([]byte(fmt.Sprintf("http://domain%d.com/page%d", i, i)), i)
 	}
 }
+
+func Benchmark_Count_1000(b *testing.B)   { benchCount(b, 1000) }
+func Benchmark_Count_10000(b *testing.B)  { benchCount(b, 10000) }
+func Benchmark_Count_100000(b *testing.B) { benchCount(b, 1000000) }
+func benchCount(b *testing.B, total int) {
+	cm := New(40, 200)
+	var i int64
+	for i = 0; i < int64(b.N); i++ {
+		cm.Add([]byte(fmt.Sprintf("http://domain%d.com/page%d", i, i)), i)
+	}
+	b.ResetTimer()
+	for i = 0; i < int64(b.N); i++ {
+		cm.Count([]byte(fmt.Sprintf("http://domain%d.com/page%d", i, i)))
+	}
+}
