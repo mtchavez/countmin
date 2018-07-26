@@ -4,7 +4,8 @@
 [![Build Status](https://travis-ci.org/mtchavez/countmin.svg?branch=f-ci-updates)](https://travis-ci.org/mtchavez/countmin)
 [![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](http://godoc.org/github.com/mtchavez/countmin)
 [![Go Report Card](https://goreportcard.com/badge/github.com/mtchavez/countmin)](https://goreportcard.com/report/github.com/mtchavez/countmin)
-[![Go Cover](http://gocover.io/_badge/github.com/mtchavez/countmin)](http://gocover.io/github.com/mtchavez/countmin)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9915ffa2990295885e85/maintainability)](https://codeclimate.com/github/mtchavez/countmin/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9915ffa2990295885e85/test_coverage)](https://codeclimate.com/github/mtchavez/countmin/test_coverage)
 
 CountMin sketching algorithm.
 
